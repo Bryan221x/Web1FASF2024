@@ -1,0 +1,33 @@
+</html>
+
+<table border="3" align="center"  width="80%">
+            <caption><font color="#47b1fc" face="arial" size="10">LISTA DE ALUNOS</font></caption>
+            <td colspan="8" bgcolor="#85fff3" align="center"><b><fonte size="4">DADOS DOS ALUNOS</fonte></b></td>
+        <tr bgcolor="#85fff3">
+            <th  width="10%">Foto</th> <th width="10%">Sexo</th> <th width="15%">Nome</th> <th  width="10%">Idade</th> <th width="15%">Cpf</th> <th width="15%">Numero</th> <th width="15%">Enderço</th> <th width="20%">Cidade</th>
+        </tr>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Bryan silva oliveira</td> <td>19 Anos</td> <td>123.456.789-12</td> <td>(37) 99126-6415</td> <td>Rua Sao Paulo 321</td> <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Rafael Lopes</td> <td>22 Anos</td> <td>987.654.321-21</td> <td>(37) 99126-6415</td> <td>Rua Coronel Delgado 221</td> <td>Lagoa da prata MG</td>
+        </tr>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Feminino</td> <td>Samanta lima costa</td> <td>25 Anos</td> <td>123.654.789-12</td> <td>(37) 99126-6415</td> <td>Rua Liberdade 221</td> <td>Bambui MG</td>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Guilherme Bricks</td> <td>18 Anos</td> <td>987.456.321-21</td> <td>(37) 99126-6415</td> <td>Rua Treze de maio 221</td> <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Kaiu pereira</td> <td>23 Anos</td> <td>321.654.987-12</td> <td>(37) 99126-6415</td> <td>Rua Tiros 221</td> <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#85ffad" align="center">
+            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Feminino</td> <td>Julia Rodrigues</td> <td>20 Anos</td> <td>789.456.123-21</td> <td>(37) 99126-6415</td> <td>Rua Treze de maio 221</td> <td>Estrela MG</td>
+        </tr>
+        
+     </table>
+
+     
+
+</body>
+
+</html>
