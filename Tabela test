@@ -1,32 +1,120 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela alunos</title>
+</head>
+
+<body>
+    <p>
+    <h1 align="center">
+        <font color="black" face="Monaco" size="6.4">Essa e a lista de alunos
+    </h1>
+    </p>
+    </font>
+
+    <p>
+        <font color="black" face="Monaco" size="5.5">
+            <h4>Alunos que se cadastraram no curso 2025 </h4>
+
+            Esses alunos se cadastraram para o curso de Analise e Desenvolvimento de Sistema 2025!
+            O local das aulas seram no campus 1 da faculdade: <a href="https://maps.app.goo.gl/x1AGouDV8zWisuVr8">FASF
+                Campus 1</a>,<br>
+            O horario do curso e de 19:00 as 22:30.<br>
+
+            Caso queira se cadastrar entre em contato com a fasf: (37)9 3421-9999
+        </font>
+    </p>
+
+
+
+    <table border="3" align="center" width="80%">
+        <caption>
+            <font color="#000512" face="arial" size="10">LISTAGEM DE ALUNOS</font>
+        </caption>
+        <td colspan="8" bgcolor="#2d89fa" align="center"><b>
+                <fonte size="4">DADOS DOS ALUNOS</fonte>
+            </b></td>
+        <tr bgcolor="#2d89fa">
+            <th width="10%">Foto</th>
+            <th width="10%">Sexo</th>
+            <th width="15%">Nome</th>
+            <th width="10%">Idade</th>
+            <th width="15%">Cpf</th>
+            <th width="15%">Numero</th>
+            <th width="15%">Enderço</th>
+            <th width="20%">Cidade</th>
+        </tr>
+        <tr bgcolor="#cfe1fc" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Masculino</td>
+            <td>Bryan silva oliveira</td>
+            <td>19 Anos</td>
+            <td>123.456.789-12</td>
+            <td>(37) 99126-6415</td>
+            <td>Rua Sao Paulo 321</td>
+            <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#84b9fa" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Masculino</td>
+            <td>Rafael Lopes</td>
+            <td>22 Anos</td>
+            <td>987.654.321-21</td>
+            <td>(37) 96415-9126</td>
+            <td>Rua Coronel Delgado 132</td>
+            <td>Lagoa da prata MG</td>
+        </tr>
+        <tr bgcolor="#cfe1fc" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Feminino</td>
+            <td>Samanta lima costa</td>
+            <td>25 Anos</td>
+            <td>123.654.789-12</td>
+            <td>(37) 91926-6451</td>
+            <td>Rua Liberdade 321</td>
+            <td>Bambui MG</td>
+        </tr>
+        <tr bgcolor="#84b9fa" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Masculino</td>
+            <td>Guilherme Bricks</td>
+            <td>18 Anos</td>
+            <td>987.456.321-21</td>
+            <td>(37) 99162-4615</td>
+            <td>Rua Treze de maio 122</td>
+            <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#cfe1fc" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Masculino</td>
+            <td>Kaiu pereira</td>
+            <td>23 Anos</td>
+            <td>321.654.987-12</td>
+            <td>(37) 96219-1564</td>
+            <td>Rua Tiros 212</td>
+            <td>Luz MG</td>
+        </tr>
+        <tr bgcolor="#84b9fa" align="center">
+            <td> <img src="ponto.png" width="100%" height="70"> </td>
+            <td>Feminino</td>
+            <td>Julia Rodrigues</td>
+            <td>20 Anos</td>
+            <td>789.456.123-21</td>
+            <td>(37) 96192-4165</td>
+            <td>Rua Treze de maio 123</td>
+            <td>Estrela MG</td>
+        </tr>
+
+    </table>
+
+
+
+</body>
+
 </html>
-
-<table border="3" align="center"  width="80%">
-            <caption><font color="#47b1fc" face="arial" size="10">LISTA DE ALUNOS</font></caption>
-            <td colspan="8" bgcolor="#85fff3" align="center"><b><fonte size="4">DADOS DOS ALUNOS</fonte></b></td>
-        <tr bgcolor="#85fff3">
-            <th  width="10%">Foto</th> <th width="10%">Sexo</th> <th width="15%">Nome</th> <th  width="10%">Idade</th> <th width="15%">Cpf</th> <th width="15%">Numero</th> <th width="15%">Enderço</th> <th width="20%">Cidade</th>
-        </tr>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Bryan silva oliveira</td> <td>19 Anos</td> <td>123.456.789-12</td> <td>(37) 99126-6415</td> <td>Rua Sao Paulo 321</td> <td>Luz MG</td>
-        </tr>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Rafael Lopes</td> <td>22 Anos</td> <td>987.654.321-21</td> <td>(37) 99126-6415</td> <td>Rua Coronel Delgado 221</td> <td>Lagoa da prata MG</td>
-        </tr>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Feminino</td> <td>Samanta lima costa</td> <td>25 Anos</td> <td>123.654.789-12</td> <td>(37) 99126-6415</td> <td>Rua Liberdade 221</td> <td>Bambui MG</td>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Guilherme Bricks</td> <td>18 Anos</td> <td>987.456.321-21</td> <td>(37) 99126-6415</td> <td>Rua Treze de maio 221</td> <td>Luz MG</td>
-        </tr>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Masculino</td> <td>Kaiu pereira</td> <td>23 Anos</td> <td>321.654.987-12</td> <td>(37) 99126-6415</td> <td>Rua Tiros 221</td> <td>Luz MG</td>
-        </tr>
-        <tr bgcolor="#85ffad" align="center">
-            <td > <img src ="ponto.png" width="100%" height="70" > </td> <td>Feminino</td> <td>Julia Rodrigues</td> <td>20 Anos</td> <td>789.456.123-21</td> <td>(37) 99126-6415</td> <td>Rua Treze de maio 221</td> <td>Estrela MG</td>
-        </tr>
-        
-     </table>
-
-     
 
 </body>
 
