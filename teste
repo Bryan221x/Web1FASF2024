@@ -3,105 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login e Cadastro</title>
+    <title>Página de Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            max-width: 900px;
+        .login-container {
             background-color: white;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        .form-box {
-            width: 48%;
+            width: 100%;
+            max-width: 400px;
         }
         h2 {
             text-align: center;
-            margin-bottom: 20px;
             color: #333;
+            margin-bottom: 20px;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
+        input[type="email"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border-radius: 5px;
             border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        input[type="submit"] {
+        input[type="submit"], .register-button {
             width: 100%;
             padding: 10px;
             background-color: #28a745;
             border: none;
             color: white;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            margin-top: 10px;
         }
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, .register-button:hover {
             background-color: #218838;
         }
-        .link {
-            text-align: center;
+        .register-button {
+            background-color: #007bff;
             margin-top: 15px;
-        }
-        .link a {
-            color: #007bff;
+            text-align: center;
+            display: block;
             text-decoration: none;
         }
-        .link a:hover {
-            text-decoration: underline;
+        .register-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Login Form -->
-        <div class="form-box">
-            <h2>Login</h2>
-            <form action="#" method="POST">
-                <label for="login-email">E-mail:</label>
-                <input type="email" id="login-email" name="login-email" required>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="pagina-principal.html" method="POST">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-                <label for="login-password">Senha:</label>
-                <input type="password" id="login-password" name="login-password" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
 
-                <input type="submit" value="Entrar">
-                <div class="link">
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-            </form>
-        </div>
-
-        <!-- Signup Form -->
-        <div class="form-box">
-            <h2>Cadastro</h2>
-            <form action="#" method="POST">
-                <label for="signup-name">Nome Completo:</label>
-                <input type="text" id="signup-name" name="signup-name" required>
-
-                <label for="signup-email">E-mail:</label>
-                <input type="email" id="signup-email" name="signup-email" required>
-
-                <label for="signup-password">Senha:</label>
-                <input type="password" id="signup-password" name="signup-password" required>
-
-                <input type="submit" value="Cadastrar">
-            </form>
-        </div>
+            <input type="submit" value="Entrar">
+        </form>
+        
+        <!-- Botão que leva para a página de cadastro -->
+        <a href="cadastro.html" class="register-button">Cadastre-se</a>
     </div>
 
 </body>
