@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login e Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .form-box {
+            width: 48%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-box">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <input type="submit" value="Entrar">
+                <div class="link">
+                    <a href="#">Esqueceu sua senha?</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-box">
+            <h2>Cadastro</h2>
+            <form action="#" method="POST">
+                <label for="signup-name">Nome Completo:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+
+                <label for="signup-email">E-mail:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+
+                <label for="signup-password">Senha:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
