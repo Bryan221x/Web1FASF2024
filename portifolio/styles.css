@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 5px 0; /* Reduzi o espaçamento vertical */
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem; /* Diminuí o tamanho da fonte */
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1rem; /* Reduzi o tamanho da fonte */
+    color: #d1e8ff;
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilos das seções */
+section {
+    flex: 1; /* Permite que as seções cresçam igualmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 30%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.11);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.219);
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+footer a {
+    color: #d1e8ff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
