@@ -1,0 +1,247 @@
+/* <---------------------------------------- 
+                 Reset básico para todos os elementos 
+----------------------------------------> */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* <---------------------------------------- 
+                 Estilos gerais do corpo 
+----------------------------------------> */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6eaf2;
+}
+
+/* <---------------------------------------- 
+                 Container principal 
+----------------------------------------> */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 20px; /* Arredonda as bordas do container */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse as bordas arredondadas */
+}
+
+/* <---------------------------------------- 
+                 Barra lateral 
+----------------------------------------> */
+.sidebar {
+    width: 70px;
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+/* <---------------------------------------- 
+                 Ícone do menu 
+----------------------------------------> */
+.menu-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    border-radius: 50%; /* Torna o ícone circular */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background 0.3s; /* Transição suave na mudança de cor do fundo */
+}
+
+.menu-icon.active, .menu-icon:hover {
+    background-color: #ff5e57;
+}
+
+/* <---------------------------------------- 
+                 Seção de conteúdo 
+----------------------------------------> */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* <---------------------------------------- 
+                 Cabeçalho da página 
+----------------------------------------> */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* <---------------------------------------- 
+                 Seleção de dias 
+----------------------------------------> */
+.day-selection {
+    display: flex;
+    align-items: center;
+}
+
+.day-selection h1 {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.emoji {
+    font-size: 24px;
+}
+
+.days span {
+    margin-left: 10px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* <---------------------------------------- 
+                 Seção de exercícios 
+----------------------------------------> */
+.exercise-section {
+    display: flex;
+}
+
+/* <---------------------------------------- 
+                 Informações do exercício 
+----------------------------------------> */
+.exercise-info {
+    width: 60%;
+}
+
+.exercise-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.muscle-group {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* <---------------------------------------- 
+                 Imagem do exercício 
+----------------------------------------> */
+.exercise-image {
+    position: relative; /* Permite posicionamento absoluto para o botão de pausa */
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden; /* Impede que a imagem ultrapasse as bordas arredondadas */
+}
+
+.exercise-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* <---------------------------------------- 
+                 Botão de pausa 
+----------------------------------------> */
+.pause-btn {
+    position: absolute; /* Posiciona o botão sobre a imagem */
+    bottom: 10px;
+    left: 10px;
+    background: #ff5e57;
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Torna o botão circular */
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* <---------------------------------------- 
+                 Controles do exercício 
+----------------------------------------> */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.control-item {
+    background: #f3f4f6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1; /* Cada controle ocupa o mesmo espaço */
+    margin: 0 5px; /* Espaçamento horizontal entre os controles */
+}
+
+/* <---------------------------------------- 
+                 Detalhes adicionais do exercício 
+----------------------------------------> */
+.exercise-details {
+    width: 40%;
+    padding-left: 20px;
+}
+
+/* <---------------------------------------- 
+                 Lista de exercícios 
+----------------------------------------> */
+.exercise-list {
+    margin-bottom: 20px;
+}
+
+/* <---------------------------------------- 
+                 Item individual de exercício 
+----------------------------------------> */
+.exercise-item {
+    display: flex;
+    align-items: center;
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    gap: 10px; /* Espaço entre imagem e conteúdo */
+}
+
+.exercise-item img {
+    border-radius: 10px;
+}
+
+.exercise-meta {
+    color: #888;
+    font-size: 12px;
+}
+
+/* <---------------------------------------- 
+                 Informações do usuário 
+----------------------------------------> */
+.user-info {
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.level {
+    font-size: 16px;
+    color: #ff5e57;
+    font-weight: bold;
+}
+
+.points {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.friends {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
