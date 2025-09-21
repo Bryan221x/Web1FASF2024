@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bem-Feito</title>
+        <link rel="stylesheet" href="../CSS/css_instituicoes.css">
+            <!-- Incluir o Leaflet.js e CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <h1 class="site-name">Bem-Feito</h1> <!-- Nome do site no canto esquerdo -->
+            <img src="../Imagens/logo.png" alt="Logo" class="logo"> <!-- Logo no canto direito -->
+        </header> <!-- Fim da div main/-header -->
+        <div class="body">
+            <div class="container">
+                <!-- Lado Esquerdo -->
+                <div class="left-side">
+                    <h1>Abrigo Senhora da Luz</h1>
+                    <section class="carrossel" id="estrutura_carrossel"> <!--estrutura do carrossel-->
+                        <div class="show-carrossel" id="tela"> <!--div que delimita o espaço das imagens-->
+                            <ul class="container-carrossel" id="Imagens"> <!--conjunto das imagens-->
+                                <li class="imagem" data-image="0">
+                                    <img src="../Imagens/abrigo7.jpg" alt="Foto da Instituição.1" class="photo" id="foto1">
+                                </li>
+                                <li class="imagem" data-image="1">
+                                    <img src="../Imagens/abrigo4.jpg" class="photo" id="foto2">
+                                </li>
+                                <li class="imagem" data-image="2">
+                                    <img src="../Imagens/abrigo5.jpg" alt="Foto da Instituição.3" class="photo" id="foto3">
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="botaoCarrossel" id="carrosselAnterior">&lt;</button> <!--botao de proximo-->
+                        <button class="botaoCarrossel" id="carrosselProximo">&gt;</button> <!--botao de anterior-->
+                    </section>
+                    <p class="description">
+                    <br><br>O Abrigo Senhora da Luz é também mais uma instituição filantrópica que tem como missão promover a qualidade de vida e inclusão social da pessoa 
+                        idosa em situação de vulnerabilidade, através da oferta de moradia, atividades sociais, assistência religiosa, contribuindo para a humanização, 
+                        promovendo a interação dos idosos com a comunidade, segundo os princípios de respeito à pessoa humana e aos fundamentos religiosos, éticos, 
+                        morais e sociais envolvidos no amparo ao idoso.<br>
+                        O Abrigo fundado em 1961 tem um papel importantíssimo na sociedade de Luz dando como foi mencionado anteriormente no amparo a idosos em situações de 
+                        vulnerabilidade.<br><br>
+                    </p>
+                    <h2>Itens para doação que precisamos:</h2>
+                    <br>
+                    <ul class="list">
+                        <li>Papel Higiênico</li>
+                        <li>Toalha de papel</li>
+                        <li>Alimentos não perecíveis</li>
+                        <li>Roupas em bom estado</li>
+                    </ul>
+                </div>
+    
+                <!-- Lado Direito -->
+                <div class="right-side">
+                        <!--<img src="link-foto.jpg" alt="Foto do Link" class="small-photo">-->
+                    <h1>Localização:</h1>
+                    <div class="map" id="map"></div>
+                    <!--<a href="https://wa.me/5537984076238" target="_blank">
+                        <p class="small-description">
+                            Entre em contato com a instituição:
+                        </p>
+                    </a>-->
+                    <!--QR Code-->
+                    <div class="estruturaQRCode">
+                        <h1>Doe via Pix</h1>
+                        <img src="../Imagens/qrcodeAbrigo.jpg" alt="QRCode">
+                        <p>Qualquer valor é bem-vindo! <br>
+                            Agradecemos muito por seu gesto &#x1F9E1;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="button-container"> <!-- Contêiner para os botões -->
+                    <button id="botao-voltar" onclick="window.location.href='lobby.html';">Voltar</button> <!-- Botão para voltar à página de doação -->
+                    <button class="book-button" onclick="window.location.href='suporte.html';">Suporte/feedback</button> <!-- Botão para suporte ou feedback -->
+                </div><!-- Fim do bloco button-container -->
+                <a href="https://sites.google.com/view/ansaluz/" target="_blank">
+                    <p> Clique aqui para entrar em contato com a instituição </p>
+                </a>
+            </footer>
+        </div>
+        <script>
+                                 /*CARROSSEL*/
+            // Lógica do carrossel de imagens
+            let imagemLi = document.querySelectorAll('.imagem');
+            let imagensUl = document.getElementById('imagens');
+            let indiceImagemAtual = 0;
+
+            function mostrarImagem(indice) {
+                imagemLi.forEach((imagem, index) => {
+                    if (index === indice) {
+                        imagem.style.display = 'block';
+                    } else {
+                        imagem.style.display = 'none';
+                    }
+                });
+            }
+
+            document.getElementById('carrosselAnterior').addEventListener('click', () => {
+                indiceImagemAtual = (indiceImagemAtual === 0) ? imagemLi.length - 1 : indiceImagemAtual - 1;
+                mostrarImagem(indiceImagemAtual);
+            });
+
+            document.getElementById('carrosselProximo').addEventListener('click', () => {
+                indiceImagemAtual = (indiceImagemAtual === imagemLi.length - 1) ? 0 : indiceImagemAtual + 1;
+                mostrarImagem(indiceImagemAtual);
+            });
+
+            // Mostrar a primeira imagem ao carregar
+            mostrarImagem(indiceImagemAtual);
+
+                                    /*MAPA*/
+            // Inicializar o mapa
+            var map = L.map('map').setView([-19.7992235,-45.6745338], 13);  // Latitude e longitude de exemplo (Londres)
+    
+            // Adicionar o tile layer (mapa base)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Adicionar marcador e evento de clique
+            var marker = L.marker([-19.7986651,-45.6925835]).addTo(map); // Local inicial (Londres)
+            
+            // Adicionar evento de clique no mapa
+            map.on('click', function(e) {
+                // Exemplo de redirecionamento para o Google Maps com a latitude e longitude
+                var lat = e.latlng.lat;
+                var lon = e.latlng.lng;
+    
+                // Redireciona para o Google Maps
+                window.location.href = 'https://www.google.com.br/maps/place/Abrigo+Nossa+Senhora+Aparecida/@-19.7986651,-45.6925835,17z/data=!3m1!4b1!4m6!3m5!1s0x94b3a3f68472f7bb:0x9c78db3cf26695d!8m2!3d-19.7986702!4d-45.6900086!16s%2Fg%2F1pty1262r?entry=ttu&g_ep=EgoyMDI0MTIwMS4xIKXMDSoASAFQAw%3D%3D' + lat + ',' + lon;
+            });
+        </script>
+    </body>
+    </html>
+</body>
+</html>

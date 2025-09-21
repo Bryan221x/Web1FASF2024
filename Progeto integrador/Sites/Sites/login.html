@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Digite seu usuário"
+                required
+            />
+  
+            <label for="password">Senha</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required
+            />
+  
+            <button id="botao-entrar" type="button">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="Cadastro.html">Registre-se</a></p>
+    </div>
+
+    <!-- Botão de voltar -->
+    <button id="botao-voltar" onclick="voltarPagina()">Voltar</button>
+
+    <script>
+        // Função para redirecionar à página de administração
+        function voltarPagina() {
+            window.location.href = 'Doacao.html';
+        }
+
+        document.getElementById('botao-entrar').addEventListener('click', function() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            alert('Login realizado com sucesso!');
+            window.location.href = 'Admin.html';
+        });
+    </script>
+</body>
+</html>

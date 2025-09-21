@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bem-Feito</title>
+        <link rel="stylesheet" href="../CSS/css_instituicoes.css">
+            <!-- Incluir o Leaflet.js e CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <h1 class="site-name">Bem-Feito</h1> <!-- Nome do site no canto esquerdo -->
+            <img src="../Imagens/logo.png" alt="Logo" class="logo"> <!-- Logo no canto direito -->
+        </header> <!-- Fim da div main/-header -->
+        <div class="body">
+            <div class="container">
+                <!-- Lado Esquerdo -->
+                <div class="left-side">
+                    <h1>Equoterapia</h1>
+                    <section class="carrossel" id="estrutura_carrossel"> <!--estrutura do carrossel-->
+                        <div class="show-carrossel" id="tela"> <!--div que delimita o espaço das imagens-->
+                            <ul class="container-carrossel" id="Imagens"> <!--conjunto das imagens-->
+                                <li class="imagem" data-image="0">
+                                    <img src="../Imagens/equo2.jpeg" alt="Foto da Instituição.1" class="photo" id="foto1">
+                                </li>
+                                <li class="imagem" data-image="1">
+                                    <img src="../Imagens/equo3.jpeg" class="photo" id="foto2">
+                                </li>
+                                <li class="imagem" data-image="2">
+                                    <img src="../Imagens/equo4.jpeg" alt="Foto da Instituição.3" class="photo" id="foto3">
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="botaoCarrossel" id="carrosselAnterior">&lt;</button> <!--botao de proximo-->
+                        <button class="botaoCarrossel" id="carrosselProximo">&gt;</button> <!--botao de anterior-->
+                    </section>
+                    <p class="description">
+                    <br> A Associação Luzense de Equoterapia fundada em 2013 é uma instituição filantrópica sem fins lucrativos.
+                         Conta no momento com 50 praticantes de diferentes faixas etárias e possui atendimento gratuito. Tem como
+                         objetivo fornecer lazer e esporte para pessoas com autismo, síndrome de Down etc. <br>
+                         Através das dinâmicas feitas com cavalos os praticantes melhoram suas capacidades
+                         motoras, sociais e controlam melhor suas reações no dia a dia. <br><br>
+                    </p>
+                    <h2>Itens para doação que precisamos:</h2>
+                    <br>
+                    <ul class="list">
+                        <li>Ração Equina</li>
+                        <li>Feno</li>
+                        <li>Silagem de Milho</li>
+    
+                    </ul>
+                </div>
+    
+                <!-- Lado Direito -->
+                <div class="right-side">
+                        <!--<img src="link-foto.jpg" alt="Foto do Link" class="small-photo">-->
+                    <h1>Localização:</h1>
+                    <div class="map" id="map"></div>
+                    <!--<a href="https://wa.me/5537984076238" target="_blank">
+                        <p class="small-description">
+                            Entre em contato com a instituição:
+                        </p>
+                    </a>-->
+                    <!--QR Code-->
+                    <div class="estruturaQRCode">
+                        <h1>Doe via Pix</h1>
+                        <img src="../Imagens/QRCode_apae.png" alt="QRCode">
+                        <p>Qualquer valor é bem-vindo! <br>
+                            Agradecemos muito por seu gesto &#x1F9E1;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="button-container"> <!-- Contêiner para os botões -->
+                    <button id="botao-voltar" onclick="window.location.href='lobby.html';">Voltar</button> <!-- Botão para voltar à página de doação -->
+                    <button class="book-button" onclick="window.location.href='suporte.html';">Suporte/feedback</button> <!-- Botão para suporte ou feedback -->
+                </div><!-- Fim do bloco button-container -->
+                <a href="https://www.facebook.com/equoterapia.luzense/?locale=pt_BR" target="_blank">
+                    <p> Clique aqui para entrar em contato com a instituição </p>
+                </a>
+            </footer>
+        </div>
+        <script>
+                                 /*CARROSSEL*/
+            // Lógica do carrossel de imagens
+            let imagemLi = document.querySelectorAll('.imagem');
+            let imagensUl = document.getElementById('imagens');
+            let indiceImagemAtual = 0;
+
+            function mostrarImagem(indice) {
+                imagemLi.forEach((imagem, index) => {
+                    if (index === indice) {
+                        imagem.style.display = 'block';
+                    } else {
+                        imagem.style.display = 'none';
+                    }
+                });
+            }
+
+            document.getElementById('carrosselAnterior').addEventListener('click', () => {
+                indiceImagemAtual = (indiceImagemAtual === 0) ? imagemLi.length - 1 : indiceImagemAtual - 1;
+                mostrarImagem(indiceImagemAtual);
+            });
+
+            document.getElementById('carrosselProximo').addEventListener('click', () => {
+                indiceImagemAtual = (indiceImagemAtual === imagemLi.length - 1) ? 0 : indiceImagemAtual + 1;
+                mostrarImagem(indiceImagemAtual);
+            });
+
+            // Mostrar a primeira imagem ao carregar
+            mostrarImagem(indiceImagemAtual);
+
+                                    /*MAPA*/
+            // Inicializar o mapa
+            var map = L.map('map').setView([-19.7992235,-45.6745338], 13);  // Latitude e longitude de exemplo (Londres)
+    
+            // Adicionar o tile layer (mapa base)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Adicionar marcador e evento de clique
+            var marker = L.marker([-19.7953845,-45.6833397]).addTo(map); // Local inicial (Londres)
+            
+            // Adicionar evento de clique no mapa
+            map.on('click', function(e) {
+                // Exemplo de redirecionamento para o Google Maps com a latitude e longitude
+                var lat = e.latlng.lat;
+                var lon = e.latlng.lng;
+    
+                // Redireciona para o Google Maps
+                window.location.href = 'https://www.google.com.br/maps/place/Vila+Vicentina+Dom+Manoel+da+Sociedade+de+S%C3%A3o+Vicente+de+Paulo/@-19.7949395,-45.6844464,17z/data=!4m14!1m7!3m6!1s0x94b3a154dd1aeb0b:0xb9bcab0ae4599079!2sVila+Vicentina+Dom+Manoel+da+Sociedade+de+S%C3%A3o+Vicente+de+Paulo!8m2!3d-19.7949042!4d-45.6825259!16s%2Fg%2F1pty0rt_9!3m5!1s0x94b3a154dd1aeb0b:0xb9bcab0ae4599079!8m2!3d-19.7949042!4d-45.6825259!16s%2Fg%2F1pty0rt_9?entry=ttu&g_ep=EgoyMDI0MTIwMS4xIKXMDSoASAFQAw%3D%3D' + lat + ',' + lon;
+            });
+        </script>
+    </body>
+    </html>
+</body>
+</html>

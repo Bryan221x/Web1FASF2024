@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bem-Feito</title>
+        <link rel="stylesheet" href="../CSS/css_instituicoes.css">
+            <!-- Incluir o Leaflet.js e CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            function carregarDados() {
+                // Obtém os dados do localStorage
+                const material1 = localStorage.getItem("material1");
+                const material2 = localStorage.getItem("material2");
+                const material3 = localStorage.getItem("material3");
+                const material4 = localStorage.getItem("material4");
+                const historia = localStorage.getItem("historia");
+    
+                // Exibe os dados na página
+                document.getElementById("material1").textContent = material1;
+                document.getElementById("material2").textContent = material2;
+                document.getElementById("material3").textContent = material3;
+                document.getElementById("material4").textContent = material4;
+                document.getElementById("historia").textContent = historia;
+            }
+        </script>
+    </head>
+    <body onload="carregarDados()">
+        <header class="main-header">
+            <h1 class="site-name">Bem-Feito</h1> <!-- Nome do site no canto esquerdo -->
+            <img src="../Imagens/logo.png" alt="Logo" class="logo"> <!-- Logo no canto direito -->
+        </header> <!-- Fim da div main-header -->
+        <div class="body">
+            <div class="container">
+                <!-- Lado Esquerdo -->
+                <div class="left-side">
+                    <h1>Doe Para o Bem-feito</h1>
+                    <img src="../Imagens/doaçao 3.jpg" alt="Foto da Instituição" class="main-photo">
+                    <p><span id="historia"></span></p>
+                    <br>
+                    <div class="estruturaMateriais">
+                        <h1>Materiais a serem doados</h1>
+                        <p><span id="material1"></span></p>
+                        <p><span id="material2"></span></p>
+                        <p><span id="material3"></span></p>
+                        <p><span id="material4"></span></p>
+                    </div> 
+                </div>
+    
+                <!-- Lado Direito -->
+                <div class="right-side">
+                    <div class="estruturaQRCode">
+                        <h1>Doe via Pix</h1>
+                        <img src="../Imagens/QRCode_apae.png" alt="QRCode">
+                        <p>Qualquer valor é bem-vindo! <br>
+                            Agradecemos muito por seu gesto &#x1F9E1;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="button-container"> <!-- Contêiner para os botões -->
+                    <button id="botao-voltar" onclick="window.location.href='Doacao.html';">Voltar</button> <!-- Botão para voltar à página de doação -->
+                    <button class="book-button" onclick="window.location.href='suporte.html';">Suporte/feedback</button> <!-- Botão para suporte ou feedback -->
+                </div><!-- Fim do bloco button-container -->
+                <a href="https://wa.me/5537984076238" target="_blank">
+                    <p> Clique aqui para entrar em contato com a instituição </p>
+                </a>
+            </footer>
+        </div>
+        <script>
+            // Inicializar o mapa
+            var map = L.map('map').setView([-19.7992235,-45.6745338], 13);  // Latitude e longitude de exemplo (Londres)
+    
+            // Adicionar o tile layer (mapa base)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Adicionar marcador e evento de clique
+            var marker = L.marker([-19.7992235,-45.6745338]).addTo(map); // Local inicial (Londres)
+            
+            // Adicionar evento de clique no mapa
+            map.on('click', function(e) {
+                // Exemplo de redirecionamento para o Google Maps com a latitude e longitude
+                var lat = e.latlng.lat;
+                var lon = e.latlng.lng;
+    
+                // Redireciona para o Google Maps
+                window.location.href = 'https://www.google.com/maps?q=' + lat + ',' + lon;
+            });
+        </script>
+    </body>
+    </html>
+</body>
+</html>

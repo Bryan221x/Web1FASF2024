@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Suporte</title>
+    <link rel="stylesheet" href="../CSS/css_suporte.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "m9_RSaAp35I_PNbx2",
+            });
+        })();
+    </script>
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="site-name">Bem-Feito</h1> <!-- Nome do site no canto esquerdo -->
+        <img src="../Imagens/logo.png" alt="Logo" class="logo"> <!-- Logo no canto direito -->
+    </header> <!-- Fim da div main-header -->
+
+    <div class="form-container">
+        <h2>Formulário de Suporte</h2>
+        <form id="support-form">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Assunto:</label>
+                <input type="text" id="subject" name="subject" required placeholder="Digite o assunto">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Digite sua mensagem"></textarea>
+            </div>
+
+            <button id="botao-enviar" type="submit">Enviar</button>
+        </form>
+    </div>
+    <button id="botao-voltar" onclick="window.location.href='Doacao.html';">Voltar</button><!-- botao para voltar tela inicial -->
+    <footer class="main-footer">
+        <p>© 2024 Suporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("support-form");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+        // Captura os valores dos campos do formulário
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        // Verifica se os campos não estão vazios
+        if (!name || !email || !subject || !message) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        // Configura os parâmetros do EmailJS
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+        };
+
+        // Substitua 'service_kphat5q' e 'template_xrrhwia' pelos seus IDs de serviço e modelo no EmailJS
+        emailjs
+            .send("service_9c3r0kl", "template_kvq8k3h", templateParams)
+            .then(
+                function (response) {
+                    alert("Mensagem enviada com sucesso!");
+                    form.reset(); // Limpa o formulário
+                },
+                function (error) {
+                    alert("Erro ao enviar a mensagem. Por favor, tente novamente.");
+                    console.error("Erro:", error);
+                }
+            );
+    });
+});
+    </script>
+</body>
+</html>

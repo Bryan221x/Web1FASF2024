@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Administrador</title>
+    <link rel="stylesheet" href="../CSS/css_admin.css">
+    <script>
+        function salvarDados() {
+            // Obtém os valores do formulário
+            const material1 = document.getElementById("material1").value;
+            const material2 = document.getElementById("material2").value;
+            const material3 = document.getElementById("material3").value;
+            const material4 = document.getElementById("material4").value;
+            const historia = document.getElementById("historia").value;
+
+            // Armazena os dados no localStorage
+            localStorage.setItem("material1", material1);
+            localStorage.setItem("material2", material2);
+            localStorage.setItem("material3", material3);
+            localStorage.setItem("material4", material4);
+            localStorage.setItem("historia", historia);
+
+            // Redireciona para a próxima página
+            window.location.href = "Doar.html";
+        }
+    </script>
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="site-name">Bem-Feito</h1> <!-- Nome do site no canto esquerdo -->
+        <img src="../Imagens/logo.png" class="logo"> <!-- Logo no canto direito -->
+    </header> <!-- Fim da div main/-header -->
+    <main>
+        <div class="estruturaExplica">
+            <h1 id="titulo">Sobre essa área</h1>
+            <br>
+            <br>
+            <p class="textoExplica">
+            Você está atualmente na página de administração do nosso site. Esta área foi desenvolvida para permitir que administradores atualizem e gerenciem os materiais e informações que são apresentados aos usuários.
+            </p>
+            <br>
+            <p class="textoExplica">
+            Nesta página, você pode adicionar ou editar os detalhes de diversos materiais importantes que serão utilizados em nosso sistema. Os campos fornecidos são para inserir informações específicas que ajudarão a organizar e manter os dados atualizados.
+            </p>
+            <br>
+            <p class="textoExplica">
+            O que você pode fazer aqui:
+            </p>
+            <br>
+            <p class="textoExplica">
+            <b>Materiais:</b> Adicione os materiais necessários para nossas operações, como itens ou recursos importantes que serão disponibilizados para outros usuários.
+            </p>
+            <br>
+            <p class="textoExplica">
+            <b>História:</b> Você também pode atualizar a história relacionada ao processo ou à instituição, fornecendo um contexto importante para quem está acessando o site.
+            </p>
+            <br>
+            <p class="textoExplica">
+            Ao preencher os campos e clicar em Enviar, as informações serão salvas automaticamente e você será redirecionado para a próxima etapa do processo.
+            </p>
+            <br><br>
+            <p class="textoExplica">
+            Se precisar de ajuda, não hesite em entrar em contato conosco
+            </p>
+        </div>
+        <div class="estruturaFormulario">
+            <h1 id="titulo" class="tituloForm">Preencha os Materiais</h1>
+            <br>
+            <br>
+            <form onsubmit="event.preventDefault(); salvarDados();">
+                <fieldset>
+                    <div class="elementosForm">
+                        <label for="historia">Historia:</label>
+                        <textarea id="historia" rows="10" cols="40" maxlength="1500"></textarea name="historia"><br><br>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="elementosForm">
+                        <label for="material1">Material 1:</label>
+                        <input type="text" id="material1" name="material1"><br><br>
+                    </div>
+                    <div class="elementosForm">
+                        <label for="material2">Material 2:</label>
+                        <input type="text" id="material2" name="material2"><br><br>
+                    </div>
+                    <div class="elementosForm">
+                        <label for="material3">Material 3:</label>
+                        <input type="text" id="material3" name="material3"><br><br>
+                    </div>
+                    <div class="elementosForm">
+                        <label for="material4">Material 4:</label>
+                        <input type="text" id="material4" name="material4"><br><br>
+                    </div>
+                </fieldset>
+                <fieldset class="botaoEnviar">
+                    <button id="enviarForm" type="submit">Enviar</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="button-container"> <!-- Contêiner para os botões -->
+            <button id="botao-voltar" onclick="window.location.href='Doacao.html';">Voltar</button> <!-- Botão para voltar à página de doação -->
+            <button class="book-button" onclick="window.location.href='suporte.html';">Suporte/feedback</button> <!-- Botão para suporte ou feedback -->
+        </div><!-- Fim do bloco button-container -->
+        <a href="https://wa.me/5537984076238" target="_blank">
+            <p> Clique aqui para entrar em contato conosco </p>
+        </a>
+    </footer>
+</body>
+</html>
