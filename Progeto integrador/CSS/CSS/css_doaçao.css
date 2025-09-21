@@ -1,0 +1,305 @@
+/* <----------------------------------------  
+            Reset Global
+----------------------------------------> */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* <----------------------------------------  
+     Corpo  
+----------------------------------------> */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffc06d, #fcec62, #ffca67, #e4d446);
+    background-size: 200% 200%; /* Amplia o gradiente para criar movimento */
+    animation: gradientBG 10s ease-in-out infinite; /* Animação única mais fluida */
+}
+
+/*----------------------
+ Animação do gradiente 
+ ----------------------*/
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* <----------------------------------------  
+     Container principal  
+----------------------------------------> */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* <----------------------------------------  
+     Barra lateral  
+----------------------------------------> */
+.sidebar {
+    width: 70px;
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+}
+
+/* <----------------------------------------  
+     Ícone do menu na barra lateral  
+----------------------------------------> */
+.menu-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative; /* Necessário para posicionar o tooltip em relação ao ícone */
+    display: flex;
+    align-items: center; /* Alinha o ícone e a legenda verticalmente */
+}
+
+.tooltip {
+    visibility: hidden; /* O tooltip começa invisível */
+    opacity: 0; /* Totalmente transparente no início */
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 15px;
+    position: absolute;
+    left: 120%; /* Ajusta a posição à direita do ícone */
+    top: 50%; /* Centraliza o tooltip verticalmente */
+    transform: translateY(-50%); /* Ajusta para o centro verticalmente */
+    white-space: nowrap;
+    font-size: 12px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza a transição */
+    z-index: 10; /* Coloca o tooltip acima de outros elementos */
+}
+
+.menu-icon:hover .tooltip {
+    visibility: visible; /* Torna o tooltip visível */
+    opacity: 1; /* Totalmente opaco ao passar o mouse */
+}
+
+.menu-icon:hover {
+    background-color: #ffa41d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon.active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.menu-icon a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* <----------------------------------------  
+    logo sidebar
+----------------------------------------> */
+
+.logo-container {
+    margin-top: auto; /* Empurra a logo para o final da sidebar */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    padding-bottom: -10px; /* Espaçamento da borda inferior */
+}
+
+.sidebar-logo {
+    width: 80px; /* Ajusta o tamanho da logo */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* (Opcional) Bordas arredondadas */
+}
+
+
+/* <----------------------------------------  
+     Conteúdo principal  
+----------------------------------------> */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* <----------------------------------------  
+     Cabeçalho  
+----------------------------------------> */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* <----------------------------------------  
+     Seleção de atalho no cabeçalho  
+----------------------------------------> */
+.atalho-selection {
+    display: flex;
+    align-items: center;
+}
+
+.atalho-selection h1 {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.emoji {
+    font-size: 24px;
+}
+
+.atalho span {
+    margin-left: 10px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* <----------------------------------------  
+     Seção principal layout flexível  
+----------------------------------------> */
+.principal-section {
+    display: flex;
+    gap: 20px; /* Espaçamento entre vídeo e explicação */
+}
+
+/* <----------------------------------------  
+     Informações da principal  
+----------------------------------------> */
+.principal-info {
+    width: 60%; /* Largura da coluna da seção do vídeo */
+}
+
+.principal-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.principal-group {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* <----------------------------------------  
+     video principal   
+----------------------------------------> */
+.principal-video {
+    position: relative;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.principal-video video {
+    width: 100%; /* Ocupa a largura total do container */
+    border-radius: 10px;
+}
+
+/* <----------------------------------------  
+     Controles tela principal  
+----------------------------------------> */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.control-item {
+    background: #f3f4f6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.control-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.control-item.active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* <----------------------------------------  
+     Explicação do projeto  
+----------------------------------------> */
+.projeto-explicacao {
+    width: 35%; /* Largura da coluna da explicação do projeto */
+    padding-left: 20px;
+}
+
+.projeto-explicacao h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.projeto-explicacao p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* <----------------------------------------  
+     Informações do objetivo  
+----------------------------------------> */
+.objetivo-info {
+    margin-top: 20px; /* Espaço entre "Sobre o Projeto" e as informações adicionais */
+    background-color: #f3f4f6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.objetivo-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.objetivo-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* <----------------------------------------  
+    a hef sem marcas (mais bonito) 
+----------------------------------------> */
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Herda a cor do elemento pai (ou defina uma cor específica) */
+}
+
+a:hover {
+    color: #ffa41d; /* (Opcional) Altere a cor ao passar o mouse */
+}

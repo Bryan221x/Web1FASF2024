@@ -1,0 +1,107 @@
+/* Estilos gerais do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e legível */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; /* Remove margens padrão */
+    color: #fff; /* Cor padrão do texto em branco */
+    background: linear-gradient(135deg, #ffc06d, #fcec62, #ffca67, #e4d446);
+    background-size: 200% 200%; /* Amplia o gradiente para criar movimento */
+    animation: gradientBG 10s ease-in-out infinite; /* Animação única mais fluida */
+}
+
+/*----------------------
+ Animação do gradiente 
+ ----------------------*/
+
+ @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos do container de registro */
+.register-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do título do formulário */
+.register-container h2 {
+    margin-bottom: 20px; 
+    color: #fff; 
+    font-size: 24px; /* Tamanho da fonte do título */
+    font-weight: 700; /* Peso da fonte para negrito */
+}
+
+/* Estilo dos rótulos dos campos de formulário */
+.register-container label {
+    display: block; /* Faz o rótulo ocupar a largura total disponível */
+    margin-bottom: 10px; 
+    font-weight: 600;
+    color: #ddd; 
+}
+
+/* Estilo dos campos de entrada */
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container input[type="tel"] {
+    width: calc(100% - 22px); 
+    padding: 12px; 
+    margin: 8px 0; 
+    border: 1px solid #555; 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    color: #333; 
+    background-color: #fff; 
+    font-size: 16px; 
+}
+
+
+
+#botao-cadastro, .book-button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#botao-cadastro {
+    background-color: #ff8800;
+    color: white;
+}
+
+.button-cadastro:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Estilo do parágrafo abaixo do formulário */
+.register-container p {
+    margin-top: 20px; /* Espaçamento acima do parágrafo */
+    font-size: 14px; /* Tamanho da fonte do texto */
+}
+
+/* Estilo dos links */
+.register-container a {
+    color: #ffc06d; /* Cor do texto do link */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    font-weight: 600; /* Peso da fonte para negrito */
+}
+
+/* Estilo dos links ao passar o mouse */
+.register-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}

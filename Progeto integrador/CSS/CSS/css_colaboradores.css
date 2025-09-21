@@ -1,0 +1,142 @@
+/*Formatação Global*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    font-size: 16px; 
+}
+
+/*Cabeçalho*/
+.main-header {
+    background-color: #ffbb00;
+    color: #fff;
+    padding: 10px;  /* Corrigido o padding */
+    width: 100%; /* Certifica-se de que o cabeçalho ocupe toda a largura */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Logo*/
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+/*Container principal*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto; /* Garante centralização horizontal */
+    padding: 10px;
+}
+
+.colaborador {
+    text-align: center;
+    color: #ffbb00;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Exibe 3 integrantes por linha */
+    gap: 20px; /* Espaço entre os cards */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+/* Alterações no layout dos membros */
+.team-member {
+    display: flex; /* Permite alinhar os itens em linha */
+    flex-direction: row; /* Organiza os elementos em linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    align-items: flex-start; /* Alinha os itens no topo */
+    text-align: left; /* Alinha o texto à esquerda */
+    justify-content: flex-start; /* Alinha à esquerda */
+    border: 2px solid #ccc;/* Adiciona uma borda externa */
+    border-radius: 5%; 
+}
+
+/* Ajustes na imagem */
+.team-member img {
+    width: 200px; /* Reduz ligeiramente o tamanho */
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.visual {
+    display: flex;
+    flex-direction: column; /* Organiza o texto e ícones em coluna */
+
+}
+
+/* Contêiner de informações */
+.team-member .info {
+    display: flex;
+    flex-direction: column; /* Organiza o texto e ícones em coluna */
+    justify-content: flex-start;
+    gap: 10px; /* Espaçamento entre os elementos */
+}
+
+/* Títulos e parágrafos */
+.team-member .info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.team-member .info p {
+    margin: 0 0 10px;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Ícones sociais */
+.social-icons {
+    margin-top: 10px; /* Distância entre o texto e os ícones */
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centraliza os ícones */
+}
+
+/* Ícones */
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .team-member {
+        flex-direction: column; /* Retorna o layout vertical em telas menores */
+        text-align: center; /* Centraliza os itens */
+        align-items: center;
+    }
+
+    .team-member img {
+        margin-bottom: 10px; /* Adiciona espaço entre imagem e texto */
+    }
+
+    .social-icons {
+        justify-content: center; /* Centraliza os ícones */
+    }
+}
+#botao-voltar {
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100px;
+    margin-bottom: 30px; /* Distância maior da parte inferior */
+    margin-left: 30px; /* Distância maior da parte esquerda */
+    margin-top: 10px;
+}

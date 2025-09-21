@@ -1,0 +1,160 @@
+/* <----------------------------------------
+     Configurações globais
+----------------------------------------> */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f4cc;
+}
+
+/* <----------------------------------------
+     Cabeçalho principal
+----------------------------------------> */
+.main-header {
+    background-color: #ffbb00;
+    color: #fff;
+    padding: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+/* <----------------------------------------
+     Conteúdo principal
+----------------------------------------> */
+.content {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* <----------------------------------------
+     Cartões de propriedades
+----------------------------------------> */
+.instituiçoes-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.instituiçoes-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(25% - 20px);
+}
+
+.instituiçoes-card img {
+    width: 100%;
+    height: auto;
+}
+
+.instituiçoes-info {
+    padding: 15px;
+}
+
+.local {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.instituiçoes-info h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.instituiçoes-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #999;
+}
+
+/* <----------------------------------------
+     Botão de visualização
+----------------------------------------> */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ffa41d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b0b300;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* <----------------------------------------
+    outros botao
+----------------------------------------> */
+
+#botao-voltar {
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100px;
+    position: fixed;
+    bottom: 30px; /* Distância maior da parte inferior */
+    left: 30px; /* Distância maior da parte esquerda */
+    
+ 
+}
+
+#botao-voltar:hover {
+    background-color: #b38300;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-voltar:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+

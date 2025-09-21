@@ -1,0 +1,128 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff; /* Cor padrão do texto em branco */
+    background: linear-gradient(135deg, #ffc06d, #fcec62, #ffca67, #e4d446);
+    background-size: 200% 200%; /* Amplia o gradiente para criar movimento */
+    animation: gradientBG 10s ease-in-out infinite; /* Animação única mais fluida */
+  }
+
+  /*----------------------
+ Animação do gradiente 
+ ----------------------*/
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+  .login-container {
+    background: rgba(22, 0, 0, 0.8); /*bloco trasparente*/
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Ajuste a sombra para um efeito mais escuro */
+    width: 360px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700; /* Cor do texto do título */
+  }
+
+  .login-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ddd; /* Cor das labels */
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: calc(100% - 22px); /* Ajusta a largura considerando o padding */
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #333; /* Cor do texto dentro dos inputs */
+    background-color: #fff;
+    font-size: 16px;
+  }
+
+  .login-container input[type="submit"] {
+    width: 100%;
+    background-color: #ffc06d;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  #botao-entrar, .book-button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#botao-entrar {
+    background-color: #ff8800;
+    color: white;
+}
+
+.button-entrar:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+#botao-voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffc06d; /* Mesmo tom do tema */
+  color: #fff; /* Texto branco */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#botao-voltar:hover {
+  background-color: #ff8800; /* Cor ao passar o mouse */
+}
+
+
+  .login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .login-container a {
+    color: #ffc06d;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .login-container a:hover {
+    text-decoration: underline;
+  }
